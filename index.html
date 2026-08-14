@@ -3,105 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospital Management System</title>
+  <title>🌸 Hospital · Pink system</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="container">
   <header>
-    <h1>Hospital Management System</h1>
-    <p>Patients and Doctors • Supabase CRUD</p>
+    <div>
+      <h1>🌸 Hospital <span>pink·care</span></h1>
+      <p>Patients &amp; Doctors · Supabase CRUD ✦</p>
+    </div>
+    <div style="font-size: 2.4rem; opacity: 0.7; display: flex; gap: 10px;">
+      <span>🩺</span><span>💖</span><span>🧸</span>
+    </div>
   </header>
 
+  <!-- PATIENT FORM -->
   <section class="card">
-    <h2>Patient Details</h2>
+    <h2><i>🧑‍⚕️</i> Patient Details</h2>
     <form id="patientForm">
       <div class="form-grid">
-        <div>
-          <label>ID No</label>
-          <input type="number" id="idno" min="1" required>
-        </div>
-        <div>
-          <label>Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div>
-          <label>Age</label>
-          <input type="number" id="age" min="0" max="150" required>
-        </div>
-        <div>
-          <label>Disease</label>
-          <input type="text" id="disease" required>
-        </div>
-        <div>
-          <label>Doctor</label>
-          <select id="doctor_id" required>
-            <option value="">Select Doctor</option>
-          </select>
+        <div><label>ID No</label><input type="number" id="idno" min="1" required></div>
+        <div><label>Name</label><input type="text" id="name" required></div>
+        <div><label>Age</label><input type="number" id="age" min="0" max="150" required></div>
+        <div><label>Disease</label><input type="text" id="disease" required></div>
+        <div><label>Doctor</label>
+          <select id="doctor_id" required><option value="">Select Doctor</option></select>
         </div>
       </div>
       <div class="buttons">
-        <button type="submit" id="patientSaveBtn">Add Patient</button>
-        <button type="button" class="secondary" onclick="clearPatientForm()">Clear</button>
+        <button type="submit" id="patientSaveBtn">➕ Add Patient</button>
+        <button type="button" class="secondary" onclick="clearPatientForm()">🧹 Clear</button>
       </div>
     </form>
     <div id="patientMessage"></div>
   </section>
 
+  <!-- PATIENT TABLE -->
   <section class="card">
     <div class="table-header">
-      <h2>Patient Records</h2>
-      <input type="search" id="patientSearch" placeholder="Search patients">
+      <h2><i>📋</i> Patient Records</h2>
+      <input type="search" id="patientSearch" placeholder="🔎 search patients...">
     </div>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>ID No</th><th>Name</th><th>Age</th><th>Disease</th><th>Doctor</th><th>Actions</th>
-          </tr>
-        </thead>
+        <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Disease</th><th>Doctor</th><th>Actions</th></tr></thead>
         <tbody id="patientTableBody"></tbody>
       </table>
     </div>
   </section>
 
+  <!-- DOCTOR FORM -->
   <section class="card">
-    <h2>Doctor Details</h2>
+    <h2><i>🩺</i> Doctor Details</h2>
     <form id="doctorForm">
       <div class="form-grid">
-        <div>
-          <label>Doctor ID No</label>
-          <input type="number" id="doctorId" min="1" required>
-        </div>
-        <div>
-          <label>Doctor Name</label>
-          <input type="text" id="doctorName" required>
-        </div>
-        <div>
-          <label>Specialisation</label>
-          <input type="text" id="specialisation" placeholder="e.g. Cardiology" required>
-        </div>
+        <div><label>Doctor ID</label><input type="number" id="doctorId" min="1" required></div>
+        <div><label>Doctor Name</label><input type="text" id="doctorName" required></div>
+        <div><label>Specialisation</label><input type="text" id="specialisation" placeholder="e.g. Cardiology" required></div>
       </div>
       <div class="buttons">
-        <button type="submit" id="doctorSaveBtn">Add Doctor</button>
-        <button type="button" class="secondary" onclick="clearDoctorForm()">Clear</button>
+        <button type="submit" id="doctorSaveBtn">➕ Add Doctor</button>
+        <button type="button" class="secondary" onclick="clearDoctorForm()">🧹 Clear</button>
       </div>
     </form>
     <div id="doctorMessage"></div>
   </section>
 
+  <!-- DOCTOR TABLE -->
   <section class="card">
     <div class="table-header">
-      <h2>Doctor Records</h2>
-      <input type="search" id="doctorSearch" placeholder="Search doctors">
+      <h2><i>📋</i> Doctor Records</h2>
+      <input type="search" id="doctorSearch" placeholder="🔎 search doctors...">
     </div>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr>
-            <th>ID No</th><th>Name</th><th>Specialisation</th><th>Actions</th>
-          </tr>
-        </thead>
+        <thead><tr><th>ID</th><th>Name</th><th>Specialisation</th><th>Actions</th></tr></thead>
         <tbody id="doctorTableBody"></tbody>
       </table>
     </div>
