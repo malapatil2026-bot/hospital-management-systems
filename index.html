@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Hospital Management System</h1>
+    <p>Patients and Doctors • Supabase CRUD</p>
+  </header>
+
+  <section class="card">
+    <h2>Patient Details</h2>
+    <form id="patientForm">
+      <div class="form-grid">
+        <div>
+          <label>ID No</label>
+          <input type="number" id="idno" min="1" required>
+        </div>
+        <div>
+          <label>Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div>
+          <label>Age</label>
+          <input type="number" id="age" min="0" max="150" required>
+        </div>
+        <div>
+          <label>Disease</label>
+          <input type="text" id="disease" required>
+        </div>
+        <div>
+          <label>Doctor</label>
+          <select id="doctor_id" required>
+            <option value="">Select Doctor</option>
+          </select>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit" id="patientSaveBtn">Add Patient</button>
+        <button type="button" class="secondary" onclick="clearPatientForm()">Clear</button>
+      </div>
+    </form>
+    <div id="patientMessage"></div>
+  </section>
+
+  <section class="card">
+    <div class="table-header">
+      <h2>Patient Records</h2>
+      <input type="search" id="patientSearch" placeholder="Search patients">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID No</th><th>Name</th><th>Age</th><th>Disease</th><th>Doctor</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="patientTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Doctor Details</h2>
+    <form id="doctorForm">
+      <div class="form-grid">
+        <div>
+          <label>Doctor ID No</label>
+          <input type="number" id="doctorId" min="1" required>
+        </div>
+        <div>
+          <label>Doctor Name</label>
+          <input type="text" id="doctorName" required>
+        </div>
+        <div>
+          <label>Specialisation</label>
+          <input type="text" id="specialisation" placeholder="e.g. Cardiology" required>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit" id="doctorSaveBtn">Add Doctor</button>
+        <button type="button" class="secondary" onclick="clearDoctorForm()">Clear</button>
+      </div>
+    </form>
+    <div id="doctorMessage"></div>
+  </section>
+
+  <section class="card">
+    <div class="table-header">
+      <h2>Doctor Records</h2>
+      <input type="search" id="doctorSearch" placeholder="Search doctors">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID No</th><th>Name</th><th>Specialisation</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="doctorTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
